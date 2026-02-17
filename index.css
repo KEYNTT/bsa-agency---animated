@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  background-color: #03040B;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+
+/* Basic utility for visible debugging during development */
+.debug-outline * { outline: 1px dashed rgba(255,255,255,0.03); }
