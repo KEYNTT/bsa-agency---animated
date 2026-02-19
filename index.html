@@ -1,69 +1,268 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BSA Agency</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              background: "#03040B",
-              primary: "#3B82F6",
-              accent: "#6366f1", 
-              cyan: "#06b6d4",
-            },
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-            },
-            backgroundImage: {
-               'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)',
-            }
-          },
-        },
-      };
-    </script>
-    <style>
-      body {
-        background-color: #03040B;
-        color: white;
-      }
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-          width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-          background: #03040B; 
-      }
-      ::-webkit-scrollbar-thumb {
-          background: #334155; 
-          border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-          background: #475569; 
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "framer-motion": "https://esm.sh/framer-motion@^12.34.1",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.574.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BSA Agency — Landing</title>
+
+  <!-- Si luego quieres self-host fonts, las metemos en /assets/fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
-  <body>
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+<body>
+
+  <!-- Background -->
+  <div class="bg" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#top">BSA<span>Agency</span></a>
+
+      <nav class="nav__links" aria-label="Secciones">
+        <a href="#services">Services</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#work">Work</a>
+        <a href="#stats">Stats</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav__cta" data-scroll="#contact">Let’s talk</button>
+
+      <button class="nav__burger" id="burger" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#work">Work</a>
+      <a href="#stats">Stats</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero section">
+      <div class="container hero__grid">
+        <div class="reveal">
+          <p class="pill">Creative • Strategy • Motion</p>
+          <h1 class="hero__title">
+            We build <span class="grad">brands</span> that look fast — and load faster.
+          </h1>
+          <p class="hero__sub">
+            Landing page moderna con animaciones suaves, performance alta y estética “agency”.
+          </p>
+
+          <div class="hero__actions">
+            <button class="btn btn--primary" data-scroll="#work">See work</button>
+            <button class="btn btn--ghost" data-scroll="#services">Explore services</button>
+          </div>
+
+          <div class="ticker" aria-hidden="true">
+            <div class="ticker__track">
+              <span>Design</span><span>Branding</span><span>Motion</span><span>Web</span><span>Strategy</span>
+              <span>Design</span><span>Branding</span><span>Motion</span><span>Web</span><span>Strategy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card reveal">
+          <div class="hero__media">
+            <!-- placeholder: luego metemos tu video o imagen -->
+            <div class="media__fake">
+              <div class="shine"></div>
+              <p>Showcase</p>
+            </div>
+          </div>
+          <div class="hero__meta">
+            <div>
+              <p class="muted">Selected</p>
+              <p class="big">High-end agency style</p>
+            </div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Services</h2>
+          <p class="muted">Lo que hacemos (cards con hover + reveal).</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <h3>Brand Identity</h3>
+            <p class="muted">Naming, visual system, guidelines.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Web Experience</h3>
+            <p class="muted">Landing, performance, UI motion.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Motion & Ads</h3>
+            <p class="muted">Micro-interactions y piezas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow -->
+    <section id="workflow" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Workflow</h2>
+          <p class="muted">Timeline animada (la armamos igual al repo).</p>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <span class="step__n">01</span>
+            <div>
+              <h3>Discovery</h3>
+              <p class="muted">Objetivos, research y dirección.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <span class="step__n">02</span>
+            <div>
+              <h3>Design</h3>
+              <p class="muted">Sistema visual + componentes.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <span class="step__n">03</span>
+            <div>
+              <h3>Build</h3>
+              <p class="muted">HTML/CSS/JS optimizado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Work -->
+    <section id="work" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Selected Work</h2>
+          <p class="muted">Cards con imágenes propias (AVIF/WebP) + hover.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <a class="work reveal" href="#" aria-label="Project 1">
+            <div class="work__img">
+              <img src="assets/work1.webp" alt="Project 1" loading="lazy" decoding="async">
+            </div>
+            <div class="work__info">
+              <p class="muted">Tech</p>
+              <h3>AI Product Launch</h3>
+            </div>
+          </a>
+
+          <a class="work reveal" href="#" aria-label="Project 2">
+            <div class="work__img">
+              <img src="assets/work2.webp" alt="Project 2" loading="lazy" decoding="async">
+            </div>
+            <div class="work__info">
+              <p class="muted">Studio</p>
+              <h3>Brand System</h3>
+            </div>
+          </a>
+
+          <a class="work reveal" href="#" aria-label="Project 3">
+            <div class="work__img">
+              <img src="assets/work3.webp" alt="Project 3" loading="lazy" decoding="async">
+            </div>
+            <div class="work__info">
+              <p class="muted">Ecom</p>
+              <h3>Conversion Landing</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section id="stats" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Stats</h2>
+          <p class="muted">Count-up al aparecer.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="stat card reveal">
+            <p class="stat__n" data-count="120">0</p>
+            <p class="muted">Projects</p>
+          </div>
+          <div class="stat card reveal">
+            <p class="stat__n" data-count="18">0</p>
+            <p class="muted">Awards</p>
+          </div>
+          <div class="stat card reveal">
+            <p class="stat__n" data-count="7">0</p>
+            <p class="muted">Years</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Contact</h2>
+          <p class="muted">Formulario simple + animación.</p>
+        </div>
+
+        <form class="form card reveal">
+          <div class="grid grid--2">
+            <label>
+              <span class="muted">Name</span>
+              <input type="text" placeholder="Your name" />
+            </label>
+            <label>
+              <span class="muted">Email</span>
+              <input type="email" placeholder="you@email.com" />
+            </label>
+          </div>
+          <label>
+            <span class="muted">Message</span>
+            <textarea rows="4" placeholder="Tell us about your project..."></textarea>
+          </label>
+          <button class="btn btn--primary" type="button">Send</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="muted">© <span id="year"></span> BSA Agency</p>
+      <div class="footer__links">
+        <a href="#top">Top</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
