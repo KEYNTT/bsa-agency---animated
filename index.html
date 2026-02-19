@@ -254,23 +254,28 @@
           <p class="muted">Formulario simple + animación.</p>
         </div>
 
-        <form class="form card reveal">
-          <div class="grid grid--2">
-            <label>
-              <span class="muted">Name</span>
-              <input type="text" placeholder="Your name" />
-            </label>
-            <label>
-              <span class="muted">Email</span>
-              <input type="email" placeholder="you@email.com" />
-            </label>
-          </div>
+      <form class="form card reveal" id="contactForm" novalidate>
+        <div class="grid grid--2">
           <label>
-            <span class="muted">Message</span>
-            <textarea rows="4" placeholder="Tell us about your project..."></textarea>
+            <span class="muted">Name</span>
+            <input id="name" name="name" type="text" placeholder="Your name" required minlength="2" />
           </label>
-          <button class="btn btn--primary" type="button">Send</button>
-        </form>
+          <label>
+            <span class="muted">Email</span>
+            <input id="email" name="email" type="email" placeholder="you@email.com" required />
+          </label>
+        </div>
+
+        <label>
+          <span class="muted">Message</span>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required minlength="10"></textarea>
+        </label>
+
+        <div class="form__actions">
+          <button class="btn btn--primary" type="submit" id="sendBtn">Send</button>
+          <p class="form__status muted" id="formStatus" aria-live="polite"></p>
+        </div>
+      </form>
       </div>
     </section>
 
