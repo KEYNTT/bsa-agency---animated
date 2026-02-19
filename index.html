@@ -102,47 +102,45 @@
       <button class="hero-tabs__nav hero-tabs__nav--r" type="button" aria-label="Scroll right">›</button>
     </div>
 
-    <!-- Video showcase -->
-    <div class="showcase reveal" aria-label="Video showcase">
-      <div class="showcase__frame">
-        <!-- Cambia src por tu video -->
-        <video
-          id="heroVideo"
-          class="showcase__video"
-          src="https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4"
-          playsinline
-          muted
-          loop
-          preload="metadata"
-        ></video>
+<!-- Video showcase -->
+<div class="showcase reveal" aria-label="Video showcase">
+  <div class="showcase__frame">
 
-        <div class="showcase__overlay" aria-hidden="true"></div>
-        <div class="showcase__shine" aria-hidden="true"></div>
+    <video
+      id="heroVideo"
+      class="showcase__video"
+      playsinline
+      muted
+      autoplay
+      loop
+      preload="metadata"
+      poster="assets/hero-poster.webp"
+    >
+      <source src="https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=1" type="video/mp4">
+    </video>
 
-        <button class="showcase__play" id="playBtn" type="button" aria-label="Play/Pause">
-          <span class="showcase__playdot"></span>
-          <span class="showcase__playtxt">Play</span>
-        </button>
+    <button class="showcase__play" id="playBtn" type="button" aria-label="Play/Pause">
+      <span class="showcase__playdot"></span>
+      <span class="showcase__playtxt">Pause</span>
+    </button>
 
-        <div class="showcase__tag" id="tabTag" aria-hidden="true">
-          Strategy
-        </div>
-      </div>
-
-      <!-- small caption row -->
-      <div class="showcase__meta">
-        <div class="meta__left">
-          <p class="muted">Selected capability</p>
-          <p class="big" id="tabTitle">Strategy systems that scale.</p>
-        </div>
-        <div class="meta__right">
-          <button class="btn btn--primary" data-scroll="#services">Explore services</button>
-        </div>
-      </div>
+    <div class="showcase__tag" id="tabTag" aria-hidden="true">
+      Strategy
     </div>
 
   </div>
-</section>
+
+  <!-- small caption row -->
+  <div class="showcase__meta">
+    <div class="meta__left">
+      <p class="muted">Selected capability</p>
+      <p class="big" id="tabTitle">Strategy systems that scale.</p>
+    </div>
+    <div class="meta__right">
+      <button class="btn btn--primary" data-scroll="#services">Explore services</button>
+    </div>
+  </div>
+</div>
 
 
     <!-- Workflow -->

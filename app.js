@@ -264,3 +264,11 @@ const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   });
 })();
+const video = document.getElementById("heroVideo");
+
+video.addEventListener("click", () => {
+  if (video.muted) {
+    video.muted = false;
+    video.volume = 1;
+  }
+});
