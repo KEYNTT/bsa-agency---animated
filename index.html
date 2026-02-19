@@ -9,6 +9,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/00-variables.css">
+  <link rel="stylesheet" href="css/01-base.css">
+  <link rel="stylesheet" href="css/02-layout.css">
+  <link rel="stylesheet" href="css/10-background.css">
+  <link rel="stylesheet" href="css/20-navbar.css">
+  <link rel="stylesheet" href="css/30-hero.css">
+  <link rel="stylesheet" href="css/40-services.css">
+  <link rel="stylesheet" href="css/50-workflow.css">
+  <link rel="stylesheet" href="css/60-work.css">
+  <link rel="stylesheet" href="css/70-stats.css">
+  <link rel="stylesheet" href="css/80-contact.css">
+  <link rel="stylesheet" href="css/90-footer.css">
+  <link rel="stylesheet" href="css/99-utilities.css">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -52,75 +65,85 @@
   </header>
 
   <main id="top">
+<section class="hero2 section" id="top">
+  <div class="container hero2__wrap">
 
-    <!-- Hero -->
-    <section class="hero section">
-      <div class="container hero__grid">
-        <div class="reveal">
-          <p class="pill">Creative • Strategy • Motion</p>
-          <h1 class="hero__title">
-            We build <span class="grad">brands</span> that look fast — and load faster.
-          </h1>
-          <p class="hero__sub">
-            Landing page moderna con animaciones suaves, performance alta y estética “agency”.
-          </p>
+    <!-- Top intro -->
+    <div class="hero2__top reveal">
+      <h1 class="hero2__title">
+        BIG STRATEGY <span class="grad">AGENCY</span>
+      </h1>
+      <p class="hero2__sub">
+        Strategy-led creative. Motion-ready execution. Fast-loading web.
+      </p>
+    </div>
 
-          <div class="hero__actions">
-            <button class="btn btn--primary" data-scroll="#work">See work</button>
-            <button class="btn btn--ghost" data-scroll="#services">Explore services</button>
-          </div>
+    <!-- Tabs bar -->
+    <div class="hero-tabs reveal" role="tablist" aria-label="Services quick tabs">
+      <button class="hero-tab is-active" role="tab" aria-selected="true" data-tab="strategy">
+        <span class="hero-tab__ic" aria-hidden="true">⤴</span>
+        <span>Strategy</span>
+      </button>
+      <button class="hero-tab" role="tab" aria-selected="false" data-tab="branding">
+        <span class="hero-tab__ic" aria-hidden="true">📣</span>
+        <span>Branding</span>
+      </button>
+      <button class="hero-tab" role="tab" aria-selected="false" data-tab="motion">
+        <span class="hero-tab__ic" aria-hidden="true">◌</span>
+        <span>Motion</span>
+      </button>
+      <button class="hero-tab" role="tab" aria-selected="false" data-tab="web">
+        <span class="hero-tab__ic" aria-hidden="true">⌁</span>
+        <span>Web</span>
+      </button>
 
-          <div class="ticker" aria-hidden="true">
-            <div class="ticker__track">
-              <span>Design</span><span>Branding</span><span>Motion</span><span>Web</span><span>Strategy</span>
-              <span>Design</span><span>Branding</span><span>Motion</span><span>Web</span><span>Strategy</span>
-            </div>
-          </div>
-        </div>
+      <!-- arrows -->
+      <button class="hero-tabs__nav hero-tabs__nav--l" type="button" aria-label="Scroll left">‹</button>
+      <button class="hero-tabs__nav hero-tabs__nav--r" type="button" aria-label="Scroll right">›</button>
+    </div>
 
-        <div class="hero__card reveal">
-          <div class="hero__media">
-            <!-- placeholder: luego metemos tu video o imagen -->
-            <div class="media__fake">
-              <div class="shine"></div>
-              <p>Showcase</p>
-            </div>
-          </div>
-          <div class="hero__meta">
-            <div>
-              <p class="muted">Selected</p>
-              <p class="big">High-end agency style</p>
-            </div>
-            <div class="dot"></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Video showcase -->
+    <div class="showcase reveal" aria-label="Video showcase">
+      <div class="showcase__frame">
+        <!-- Cambia src por tu video -->
+        <video
+          id="heroVideo"
+          class="showcase__video"
+          src="assets/hero.mp4"
+          playsinline
+          muted
+          loop
+          preload="metadata"
+        ></video>
 
-    <!-- Services -->
-    <section id="services" class="section">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2>Services</h2>
-          <p class="muted">Lo que hacemos (cards con hover + reveal).</p>
-        </div>
+        <div class="showcase__overlay" aria-hidden="true"></div>
+        <div class="showcase__shine" aria-hidden="true"></div>
 
-        <div class="grid grid--3">
-          <article class="card reveal">
-            <h3>Brand Identity</h3>
-            <p class="muted">Naming, visual system, guidelines.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Web Experience</h3>
-            <p class="muted">Landing, performance, UI motion.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Motion & Ads</h3>
-            <p class="muted">Micro-interactions y piezas.</p>
-          </article>
+        <button class="showcase__play" id="playBtn" type="button" aria-label="Play/Pause">
+          <span class="showcase__playdot"></span>
+          <span class="showcase__playtxt">Play</span>
+        </button>
+
+        <div class="showcase__tag" id="tabTag" aria-hidden="true">
+          Strategy
         </div>
       </div>
-    </section>
+
+      <!-- small caption row -->
+      <div class="showcase__meta">
+        <div class="meta__left">
+          <p class="muted">Selected capability</p>
+          <p class="big" id="tabTitle">Strategy systems that scale.</p>
+        </div>
+        <div class="meta__right">
+          <button class="btn btn--primary" data-scroll="#services">Explore services</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- Workflow -->
     <section id="workflow" class="section">
