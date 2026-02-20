@@ -326,3 +326,67 @@ video.addEventListener("click", () => {
   video.addEventListener("pause", setPlayLabel);
 })();
 
+// ========== VIDEO CONTROLS (PLAY + SOUND) ==========
+(() => {
+  const video = document.getElementById("heroVideo");
+  const playBtn = document.getElementById("playBtn");
+  const playTxt = document.getElementById("playTxt");
+  const soundBtn = document.getElementById("soundBtn");
+  const soundTxt = document.getElementById("soundTxt");
+
+  if (!video) return;
+
+  // Autoplay más compatible: inicia en mute
+  video.muted = true;
+  video.volume = 1;
+  video.playsInline = true;
+
+  const setPlayLabel = () => {
+    if (!playTxt) return;
+    playTxt.textContent = video.paused ? "Play" : "Pause";
+  };
+
+  const setSoundLabel = () => {
+    if (!soundTxt) return;
+    soundTxt.textContent = video.muted ? "Sound off" : "Sound on";
+  };
+
+  async function safePlay() {
+    try { await video.play(); } catch {}
+    setPlayLabel();
+  }
+
+  // Intenta autoplay al cargar
+  video.addEventListener("loadedmetadata", () => {
+    safePlay();
+    setPlayLabel();
+    setSoundLabel();
+  });
+
+  // Play / Pause
+  playBtn?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (video.paused) await safePlay();
+    else video.pause();
+    setPlayLabel();
+  });
+
+  // Sound on/off (requiere interacción del usuario; normal)
+  soundBtn?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // si está pausado, lo reproducimos para que el audio quede “enganchado”
+    if (video.paused) await safePlay();
+
+    video.muted = !video.muted;
+    if (!video.muted) video.volume = 1;
+
+    setSoundLabel();
+  });
+
+  // Sync labels
+  video.addEventListener("play", setPlayLabel);
+  video.addEventListener("pause", setPlayLabel);
+})();

@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
   <!-- Background -->
@@ -54,97 +55,84 @@
   </header>
 
   <main id="top">
-<section class="hero2 section" id="top">
-  <div class="container hero2__wrap">
 
-    <!-- Top intro -->
-    <div class="hero2__top reveal">
-      <h1 class="hero2__title">
-        BIG STRATEGY <span class="grad">AGENCY</span>
-      </h1>
-      <p class="hero2__sub">
-        Strategy-led creative. Motion-ready execution. Fast-loading web.
-      </p>
-    </div>
+    <!-- HERO -->
+    <section class="hero2 section" id="top">
+      <div class="container hero2__wrap">
 
-    <!-- Tabs bar -->
-    <div class="hero-tabs reveal" role="tablist" aria-label="Services quick tabs">
-      <button class="hero-tab is-active" role="tab" aria-selected="true" data-tab="strategy">
-        <span class="hero-tab__ic" aria-hidden="true">⤴</span>
-        <span>Strategy</span>
-      </button>
-      <button class="hero-tab" role="tab" aria-selected="false" data-tab="branding">
-        <span class="hero-tab__ic" aria-hidden="true">📣</span>
-        <span>Branding</span>
-      </button>
-      <button class="hero-tab" role="tab" aria-selected="false" data-tab="motion">
-        <span class="hero-tab__ic" aria-hidden="true">◌</span>
-        <span>Motion</span>
-      </button>
-      <button class="hero-tab" role="tab" aria-selected="false" data-tab="web">
-        <span class="hero-tab__ic" aria-hidden="true">⌁</span>
-        <span>Web</span>
-      </button>
+        <!-- Top intro -->
+        <div class="hero2__top reveal">
+          <h1 class="hero2__title">
+            BIG STRATEGY <span class="grad">AGENCY</span>
+          </h1>
+          <p class="hero2__sub">
+            Strategy-led creative. Motion-ready execution. Fast-loading web.
+          </p>
+        </div>
 
-      <!-- arrows -->
-      <button class="hero-tabs__nav hero-tabs__nav--l" type="button" aria-label="Scroll left">‹</button>
-      <button class="hero-tabs__nav hero-tabs__nav--r" type="button" aria-label="Scroll right">›</button>
-    </div>
+        <!-- Tabs bar -->
+        <div class="hero-tabs reveal" role="tablist" aria-label="Services quick tabs">
+          <button class="hero-tab is-active" role="tab" aria-selected="true" data-tab="strategy">
+            <span class="hero-tab__ic" aria-hidden="true">⤴</span>
+            <span>Strategy</span>
+          </button>
+          <button class="hero-tab" role="tab" aria-selected="false" data-tab="branding">
+            <span class="hero-tab__ic" aria-hidden="true">📣</span>
+            <span>Branding</span>
+          </button>
+          <button class="hero-tab" role="tab" aria-selected="false" data-tab="motion">
+            <span class="hero-tab__ic" aria-hidden="true">◌</span>
+            <span>Motion</span>
+          </button>
+          <button class="hero-tab" role="tab" aria-selected="false" data-tab="web">
+            <span class="hero-tab__ic" aria-hidden="true">⌁</span>
+            <span>Web</span>
+          </button>
 
-<!-- Video showcase -->
-<div class="showcase reveal" aria-label="Video showcase">
-  <div class="showcase__frame yt">
+          <!-- arrows -->
+          <button class="hero-tabs__nav hero-tabs__nav--l" type="button" aria-label="Scroll left">‹</button>
+          <button class="hero-tabs__nav hero-tabs__nav--r" type="button" aria-label="Scroll right">›</button>
+        </div>
 
-    <video
-      id="heroVideo"
-      class="showcase__video"
-      playsinline
-      muted
-      autoplay
-      loop
-      preload="metadata"
-    >
-      <source src="https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=2" type="video/mp4">
-    </video>
+        <!-- Video showcase -->
+          <div class="showcase__frame yt">
+            <video
+              id="heroVideo"
+              class="showcase__video"
+              playsinline
+              muted
+              autoplay
+              loop
+              preload="metadata"
+            >
+              <source src="https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3" type="video/mp4">
+            </video>
 
-    <!-- Controls overlay -->
-    <div class="showcase__controls" aria-hidden="false">
-      <button class="ctrl" id="playBtn" type="button" aria-label="Play/Pause">
-        <span class="ctrl__txt" id="playTxt">Pause</span>
-      </button>
+            <div class="showcase__controls">
+              <button class="ctrl" id="playBtn" type="button" aria-label="Play/Pause">
+                <span id="playTxt">Pause</span>
+              </button>
 
-      <button class="ctrl" id="soundBtn" type="button" aria-label="Mute/Unmute">
-        <span class="ctrl__txt" id="soundTxt">Sound off</span>
-      </button>
-    </div>
+              <button class="ctrl" id="soundBtn" type="button" aria-label="Mute/Unmute">
+                <span id="soundTxt">Sound off</span>
+              </button>
+            </div>
+          </div>
 
-    <div class="showcase__tag" id="tabTag" aria-hidden="true">Strategy</div>
-  </div>
+          <!-- small caption row -->
+          <div class="showcase__meta">
+            <div class="meta__left">
+              <p class="muted">Selected capability</p>
+              <p class="big" id="tabTitle">Strategy systems that scale.</p>
+            </div>
+            <div class="meta__right">
+              <button class="btn btn--primary" data-scroll="#services">Explore services</button>
+            </div>
+          </div>
+        </div>
 
-  <!-- small caption row -->
-  <div class="showcase__meta">
-    <div class="meta__left">
-      <p class="muted">Selected capability</p>
-      <p class="big" id="tabTitle">Strategy systems that scale.</p>
-    </div>
-    <div class="meta__right">
-      <button class="btn btn--primary" data-scroll="#services">Explore services</button>
-    </div>
-  </div>
-</div>
-
-  <!-- small caption row -->
-  <div class="showcase__meta">
-    <div class="meta__left">
-      <p class="muted">Selected capability</p>
-      <p class="big" id="tabTitle">Strategy systems that scale.</p>
-    </div>
-    <div class="meta__right">
-      <button class="btn btn--primary" data-scroll="#services">Explore services</button>
-    </div>
-  </div>
-</div>
-
+      </div>
+    </section>
 
     <!-- Workflow -->
     <section id="workflow" class="section">
@@ -255,28 +243,28 @@
           <p class="muted">Formulario simple + animación.</p>
         </div>
 
-      <form class="form card reveal" id="contactForm" novalidate>
-        <div class="grid grid--2">
-          <label>
-            <span class="muted">Name</span>
-            <input id="name" name="name" type="text" placeholder="Your name" required minlength="2" />
-          </label>
-          <label>
-            <span class="muted">Email</span>
-            <input id="email" name="email" type="email" placeholder="you@email.com" required />
-          </label>
-        </div>
+        <form class="form card reveal" id="contactForm" novalidate>
+          <div class="grid grid--2">
+            <label>
+              <span class="muted">Name</span>
+              <input id="name" name="name" type="text" placeholder="Your name" required minlength="2" />
+            </label>
+            <label>
+              <span class="muted">Email</span>
+              <input id="email" name="email" type="email" placeholder="you@email.com" required />
+            </label>
+          </div>
 
-        <label>
-          <span class="muted">Message</span>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required minlength="10"></textarea>
-        </label>
+          <label>
+            <span class="muted">Message</span>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required minlength="10"></textarea>
+          </label>
 
-        <div class="form__actions">
-          <button class="btn btn--primary" type="submit" id="sendBtn">Send</button>
-          <p class="form__status muted" id="formStatus" aria-live="polite"></p>
-        </div>
-      </form>
+          <div class="form__actions">
+            <button class="btn btn--primary" type="submit" id="sendBtn">Send</button>
+            <p class="form__status muted" id="formStatus" aria-live="polite"></p>
+          </div>
+        </form>
       </div>
     </section>
 
