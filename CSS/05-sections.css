@@ -1,3 +1,12 @@
+/* =========================================================
+   05 — SECTIONS
+   - Hero
+   - Showcase (Video)
+   - Workflow
+   - Work
+   - Stats
+========================================================= */
+
 /* ===== HERO (legacy) ===== */
 .hero{ padding-top: 64px; }
 .hero__grid{
@@ -31,91 +40,27 @@
   max-width: 60ch;
   color: rgba(233,236,242,.70);
 }
-
-.hero__actions{
-  display:flex;
-  gap: 10px;
-  flex-wrap:wrap;
-  margin-bottom: 18px;
-}
-
-.ticker{
-  overflow:hidden;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255,255,255,.03);
-}
-.ticker__track{
-  display:flex;
-  gap: 22px;
-  padding: 10px 14px;
-  width:max-content;
-  animation: marquee 18s linear infinite;
-}
-.ticker__track span{ color: rgba(233,236,242,.72); }
-@keyframes marquee{
-  from{ transform: translateX(0); }
-  to{ transform: translateX(-50%); }
-}
-
-.hero__card{
-  border-radius: var(--r);
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-  box-shadow: var(--shadow);
-  padding: 16px;
-  display:flex;
-  flex-direction:column;
-  gap: 14px;
-}
-.media__fake{
-  height: 320px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.12);
-  background:
-    radial-gradient(1200px 500px at 0% 0%, rgba(125,249,255,.20), transparent 60%),
-    radial-gradient(900px 600px at 100% 100%, rgba(179,139,255,.18), transparent 55%),
-    rgba(255,255,255,.03);
-  position:relative;
-  overflow:hidden;
-  display:grid;
-  place-items:center;
-  color: rgba(233,236,242,.72);
-}
-
-.shine{
+.showcase__sound{
   position:absolute;
-  inset:-50%;
-  background: linear-gradient(120deg, transparent 45%, rgba(255,255,255,.20), transparent 55%);
-  transform: translateX(-30%);
-  animation: shine 4.2s ease-in-out infinite;
-}
-@keyframes shine{
-  0%,100%{ transform: translateX(-30%) rotate(12deg); opacity:.35; }
-  50%{ transform: translateX(30%) rotate(12deg); opacity:.55; }
-}
-
-.hero__meta{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-}
-.dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background: rgba(125,249,255,.8);
-  box-shadow: 0 0 22px rgba(125,249,255,.35);
+  left: 16px;
+  bottom: 62px; /* queda arriba del play */
+  z-index: 10;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.28);
+  color: rgba(233,236,242,.88);
+  cursor:pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* ===== HERO v2 (tabs + horizontal video) ===== */
+/* ===== HERO v2 ===== */
 .hero2{
   padding-top: 64px;
   padding-bottom: 86px;
   position: relative;
 }
-
 .hero2::before{
   content:"";
   position:absolute;
@@ -127,7 +72,6 @@
   pointer-events:none;
   z-index:-1;
 }
-
 .hero2__wrap{ display:grid; gap: 22px; }
 .hero2__top{ text-align:center; display:grid; gap: 10px; justify-items:center; }
 .hero2__title{
@@ -136,11 +80,7 @@
   letter-spacing:-.035em;
   line-height:1.03;
 }
-.hero2__sub{
-  margin:0;
-  color: rgba(233,236,242,.72);
-  max-width: 70ch;
-}
+.hero2__sub{ margin:0; color: rgba(233,236,242,.72); max-width: 70ch; }
 
 /* Tabs bar */
 .hero-tabs{
@@ -181,23 +121,11 @@
   position: relative;
   overflow:hidden;
 }
-
-.hero-tab::after{
-  content:"";
-  position:absolute;
-  inset:-60% -60%;
-  background: linear-gradient(120deg, transparent 45%, rgba(255,255,255,.12), transparent 55%);
-  transform: translateX(-18%) rotate(10deg);
-  opacity: 0;
-  transition: opacity .25s ease;
-}
 .hero-tab:hover{
   transform: translateY(-3px);
   border-color: rgba(255,255,255,.20);
   background: rgba(255,255,255,.07);
 }
-.hero-tab:hover::after{ opacity:.55; }
-
 .hero-tab__ic{
   width: 42px;
   height: 42px;
@@ -209,7 +137,6 @@
   box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
   opacity: .95;
 }
-
 .hero-tab.is-active{
   border-color: rgba(125,249,255,.35);
   background:
@@ -218,36 +145,7 @@
   box-shadow: 0 22px 60px rgba(0,0,0,.28), 0 0 0 1px rgba(125,249,255,.14) inset;
 }
 
-/* arrows */
-.hero-tabs__nav{
-  position:absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.22);
-  color: rgba(233,236,242,.85);
-  display:grid;
-  place-items:center;
-  cursor:pointer;
-  transition: transform .2s ease, background .2s ease, border-color .2s ease;
-}
-.hero-tabs__nav:hover{
-  transform: translateY(-50%) scale(1.04);
-  border-color: rgba(255,255,255,.20);
-  background: rgba(0,0,0,.32);
-}
-.hero-tabs__nav--l{ left: 10px; }
-.hero-tabs__nav--r{ right: 10px; }
-
-@media (max-width: 720px){
-  .hero-tab{ min-width: 170px; }
-  .hero-tabs{ padding-inline: 46px; }
-}
-
-/* Video showcase */
+/* Video showcase base */
 .showcase{
   width: min(980px, 100%);
   margin: 10px auto 0;
@@ -268,14 +166,31 @@
   transform: translateZ(0);
 }
 
+/* ✅ video base: NO ratio aquí (lo define el frame) */
 .showcase__video{
   width:100%;
-  aspect-ratio: 16 / 7;
-  object-fit: cover;
+  height:100%;
   display:block;
+  object-fit: cover;
   filter: saturate(1.05) contrast(1.05);
   transform: scale(1.01);
 }
+
+/* ✅ default hero ratio (horizontal) */
+.showcase__frame:not(.yt){
+  aspect-ratio: 16 / 7;
+}
+
+/* ✅ YouTube ratio SOLO si usas .yt */
+.showcase__frame.yt{
+  aspect-ratio: 16 / 9;
+  background:#000;
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+/* overlays (no bloquean clicks) */
+.showcase__overlay,
+.showcase__shine{ pointer-events:none; }
 
 .showcase__overlay{
   position:absolute;
@@ -284,27 +199,13 @@
     radial-gradient(900px 340px at 15% 20%, rgba(58,123,255,.16), transparent 60%),
     radial-gradient(900px 420px at 80% 80%, rgba(179,139,255,.14), transparent 60%),
     linear-gradient(180deg, rgba(7,10,15,.20), rgba(7,10,15,.45));
-  pointer-events:none;
-}
-
-.showcase__shine{
-  position:absolute;
-  inset:-50%;
-  background: linear-gradient(120deg, transparent 45%, rgba(255,255,255,.18), transparent 55%);
-  transform: translateX(-35%) rotate(12deg);
-  opacity:.35;
-  animation: heroShine 4.8s ease-in-out infinite;
-  pointer-events:none;
-}
-@keyframes heroShine{
-  0%,100%{ transform: translateX(-35%) rotate(12deg); opacity:.28; }
-  50%{ transform: translateX(35%) rotate(12deg); opacity:.52; }
 }
 
 .showcase__play{
   position:absolute;
   left: 16px;
   bottom: 16px;
+  z-index: 10;
   display:flex;
   align-items:center;
   gap:10px;
@@ -325,6 +226,7 @@
   box-shadow: 0 0 18px rgba(125,249,255,.30);
 }
 
+/* tag (solo una definición) */
 .showcase__tag{
   position:absolute;
   right: 16px;
@@ -344,17 +246,58 @@
   justify-content:space-between;
   gap: 14px;
 }
-
 @media (max-width: 720px){
   .showcase__meta{ flex-direction:column; align-items:flex-start; }
 }
 
-/* subtle float on reveal in */
-.reveal.is-in.hero-tabs,
-.reveal.is-in.showcase__frame{
-  animation: floatIn .7s ease both;
+/* Workflow */
+.steps{ display:grid; gap: 14px; }
+.step{
+  display:flex;
+  gap: 14px;
+  align-items:flex-start;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: rgba(255,255,255,.03);
 }
-@keyframes floatIn{
-  from{ transform: translateY(12px); opacity: 0; }
-  to{ transform: translateY(0); opacity: 1; }
+.step__n{
+  width:44px;
+  height:44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  display:grid;
+  place-items:center;
+  color: rgba(233,236,242,.78);
+}
+
+/* Work */
+.work{
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+  padding: 14px;
+  border-radius: var(--r);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+.work:hover{
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.05);
+}
+.work__img{
+  border-radius: 16px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  height: 220px;
+}
+.work__img img{ width:100%; height:100%; object-fit:cover; }
+
+/* Stats */
+.stat__n{
+  font-size: clamp(34px, 4vw, 54px);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.03em;
 }

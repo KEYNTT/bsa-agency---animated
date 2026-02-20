@@ -5,23 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BSA Agency — Landing</title>
 
-  <!-- Si luego quieres self-host fonts, las metemos en /assets/fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/00-variables.css">
-  <link rel="stylesheet" href="css/01-base.css">
-  <link rel="stylesheet" href="css/02-layout.css">
-  <link rel="stylesheet" href="css/10-background.css">
-  <link rel="stylesheet" href="css/20-navbar.css">
-  <link rel="stylesheet" href="css/30-hero.css">
-  <link rel="stylesheet" href="css/40-services.css">
-  <link rel="stylesheet" href="css/50-workflow.css">
-  <link rel="stylesheet" href="css/60-work.css">
-  <link rel="stylesheet" href="css/70-stats.css">
-  <link rel="stylesheet" href="css/80-contact.css">
-  <link rel="stylesheet" href="css/90-footer.css">
-  <link rel="stylesheet" href="css/99-utilities.css">
+  <link rel="stylesheet" href="css/01-settings.css">
+  <link rel="stylesheet" href="css/02-base.css">
+  <link rel="stylesheet" href="css/03-layout.css">
+  <link rel="stylesheet" href="css/04-components.css">
+  <link rel="stylesheet" href="css/05-sections.css">
+  <link rel="stylesheet" href="css/06-effects.css">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -104,7 +93,7 @@
 
 <!-- Video showcase -->
 <div class="showcase reveal" aria-label="Video showcase">
-  <div class="showcase__frame">
+  <div class="showcase__frame yt">
 
     <video
       id="heroVideo"
@@ -114,21 +103,35 @@
       autoplay
       loop
       preload="metadata"
-      poster="assets/hero-poster.webp"
     >
-      <source src="https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=1" type="video/mp4">
+      <source src="https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=2" type="video/mp4">
     </video>
 
-    <button class="showcase__play" id="playBtn" type="button" aria-label="Play/Pause">
-      <span class="showcase__playdot"></span>
-      <span class="showcase__playtxt">Pause</span>
-    </button>
+    <!-- Controls overlay -->
+    <div class="showcase__controls" aria-hidden="false">
+      <button class="ctrl" id="playBtn" type="button" aria-label="Play/Pause">
+        <span class="ctrl__txt" id="playTxt">Pause</span>
+      </button>
 
-    <div class="showcase__tag" id="tabTag" aria-hidden="true">
-      Strategy
+      <button class="ctrl" id="soundBtn" type="button" aria-label="Mute/Unmute">
+        <span class="ctrl__txt" id="soundTxt">Sound off</span>
+      </button>
     </div>
 
+    <div class="showcase__tag" id="tabTag" aria-hidden="true">Strategy</div>
   </div>
+
+  <!-- small caption row -->
+  <div class="showcase__meta">
+    <div class="meta__left">
+      <p class="muted">Selected capability</p>
+      <p class="big" id="tabTitle">Strategy systems that scale.</p>
+    </div>
+    <div class="meta__right">
+      <button class="btn btn--primary" data-scroll="#services">Explore services</button>
+    </div>
+  </div>
+</div>
 
   <!-- small caption row -->
   <div class="showcase__meta">

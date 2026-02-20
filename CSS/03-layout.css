@@ -1,0 +1,30 @@
+/* =========================================================
+   03 — LAYOUT (Container + Sections + Grid)
+========================================================= */
+.container{ width:min(1120px, calc(100% - 40px)); margin-inline:auto; }
+
+.section{ padding: 92px 0; position:relative; }
+
+.section__head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:24px;
+}
+
+.section__head h2{
+  margin:0;
+  font-size: clamp(26px, 3vw, 42px);
+  letter-spacing:-.02em;
+}
+
+.grid{ display:grid; gap:18px; }
+.grid--2{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+.grid--3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+@media (max-width: 900px){
+  .grid--3{ grid-template-columns:1fr; }
+  .grid--2{ grid-template-columns:1fr; }
+  .section__head{ flex-direction:column; align-items:flex-start; }
+}

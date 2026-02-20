@@ -115,19 +115,22 @@ const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   countEls.forEach((el) => statsIO.observe(el));
 })();
-
-// ========== HERO TABS + VIDEO (SAFE) ==========
+// ========== HERO TABS + VIDEO (ONE CONTROLLER) ==========
 (() => {
-  const tabsBar = $(".hero-tabs");
-  const tabs = $$(".hero-tab");
-  const tabTag = $("#tabTag");
-  const tabTitle = $("#tabTitle");
+  const tabsBar = document.querySelector(".hero-tabs");
+  const tabs = Array.from(document.querySelectorAll(".hero-tab"));
+  const tabTag = document.getElementById("tabTag");
+  const tabTitle = document.getElementById("tabTitle");
 
-  const video = $("#heroVideo");
-  const playBtn = $("#playBtn");
+  const video = document.getElementById("heroVideo");
+  const playBtn = document.getElementById("playBtn");
+  const playTxt = document.getElementById("playTxt") || playBtn?.querySelector(".showcase__playtxt");
 
-  // Si no existe el hero nuevo, no hacemos nada (no rompe)
-  if (!tabsBar && !tabs.length && !video && !playBtn) return;
+  const soundBtn = document.getElementById("soundBtn");
+  const soundTxt = document.getElementById("soundTxt");
+
+  // Si no hay hero/video, salimos sin romper
+  if (!tabsBar && !tabs.length && !video) return;
 
   const TAB_COPY = {
     strategy: "Strategy systems that scale.",
@@ -147,79 +150,87 @@ const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
     if (tabTag) tabTag.textContent = key.charAt(0).toUpperCase() + key.slice(1);
     if (tabTitle) tabTitle.textContent = TAB_COPY[key] || "Selected capability";
-
-    try {
-      tabTag?.animate(
-        [{ transform: "translateY(6px)", opacity: 0 }, { transform: "translateY(0)", opacity: 1 }],
-        { duration: 260, easing: "cubic-bezier(.2,.8,.2,1)" }
-      );
-      tabTitle?.animate(
-        [{ transform: "translateY(6px)", opacity: 0 }, { transform: "translateY(0)", opacity: 1 }],
-        { duration: 280, easing: "cubic-bezier(.2,.8,.2,1)" }
-      );
-    } catch {}
   }
 
-  // Tabs click
+  // Tabs
   if (tabs.length) {
     tabs.forEach((btn) => btn.addEventListener("click", () => setActiveTab(btn.dataset.tab)));
     setActiveTab(tabs[0].dataset.tab || "strategy");
   }
 
-  // Arrows scroll (si existen)
-  const left = $(".hero-tabs__nav--l");
-  const right = $(".hero-tabs__nav--r");
+  // Arrows
+  const left = document.querySelector(".hero-tabs__nav--l");
+  const right = document.querySelector(".hero-tabs__nav--r");
   left?.addEventListener("click", () => tabsBar?.scrollBy({ left: -320, behavior: "smooth" }));
   right?.addEventListener("click", () => tabsBar?.scrollBy({ left: 320, behavior: "smooth" }));
 
-  // Video play/pause
-  async function tryPlay() {
-    if (!video) return false;
+  // --- VIDEO ---
+  if (!video) return;
+
+  // Autoplay seguro (requiere muted)
+  video.muted = true;
+  video.volume = 1;
+  video.playsInline = true;
+
+  const setPlayLabel = () => {
+    if (!playTxt) return;
+    playTxt.textContent = video.paused ? "Play" : "Pause";
+  };
+
+  const setSoundLabel = () => {
+    if (!soundTxt) return;
+    soundTxt.textContent = video.muted ? "Sound off" : "Sound on";
+  };
+
+  async function safePlay() {
     try {
       await video.play();
-      const t = playBtn?.querySelector(".showcase__playtxt");
-      if (t) t.textContent = "Pause";
-      return true;
     } catch {
-      const t = playBtn?.querySelector(".showcase__playtxt");
-      if (t) t.textContent = "Play";
-      return false;
+      // autoplay puede fallar hasta que haya interacción
     }
+    setPlayLabel();
   }
 
-  if (video) {
-    video.muted = true;
-    video.playsInline = true;
-
-    video.addEventListener("loadeddata", () => {
-      tryPlay();
-    });
-
-    // desbloqueo por interacción (si autoplay está bloqueado)
-    const unlock = async () => {
-      const ok = await tryPlay();
-      if (ok) {
-        window.removeEventListener("pointerdown", unlock);
-        window.removeEventListener("touchstart", unlock);
-        window.removeEventListener("keydown", unlock);
-      }
-    };
-
-    window.addEventListener("pointerdown", unlock, { passive: true });
-    window.addEventListener("touchstart", unlock, { passive: true });
-    window.addEventListener("keydown", unlock);
-  }
-
-  playBtn?.addEventListener("click", async () => {
-    if (!video) return;
-    if (video.paused) {
-      await tryPlay();
-    } else {
-      video.pause();
-      const t = playBtn.querySelector(".showcase__playtxt");
-      if (t) t.textContent = "Play";
-    }
+  // intenta autoplay al cargar
+  video.addEventListener("loadedmetadata", () => {
+    safePlay();
+    setPlayLabel();
+    setSoundLabel();
   });
+
+  // Play/Pause button
+  playBtn?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (video.paused) await safePlay();
+    else video.pause();
+
+    setPlayLabel();
+  });
+
+  // Sound button (solo funcionará tras interacción del usuario, por política del navegador)
+  soundBtn?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Asegura que esté reproduciendo cuando activas sonido
+    if (video.paused) {
+      await safePlay();
+    }
+
+    video.muted = !video.muted;
+    if (!video.muted) video.volume = 1;
+
+    setSoundLabel();
+  });
+
+  // Mantener labels en sync
+  video.addEventListener("play", setPlayLabel);
+  video.addEventListener("pause", setPlayLabel);
+
+  // Primera interacción del usuario: si quiere, puedes auto-unmute aquí (opcional)
+  // window.addEventListener("pointerdown", () => { ... }, { once:true });
 })();
 
 // ========== FOOTER YEAR ==========
@@ -272,3 +283,46 @@ video.addEventListener("click", () => {
     video.volume = 1;
   }
 });
+// === VIDEO CONTROLS (Play/Pause + Sound) ===
+(() => {
+  const video = document.getElementById("heroVideo");
+  const playBtn = document.getElementById("playBtn");
+  const playTxt = document.getElementById("playTxt");
+  const soundBtn = document.getElementById("soundBtn");
+  const soundTxt = document.getElementById("soundTxt");
+
+  if (!video) return;
+
+  const setPlayLabel = () => {
+    if (!playTxt) return;
+    playTxt.textContent = video.paused ? "Play" : "Pause";
+  };
+
+  const setSoundLabel = () => {
+    if (!soundTxt) return;
+    soundTxt.textContent = video.muted ? "Sound off" : "Sound on";
+  };
+
+  // Autoplay suele requerir muted
+  video.muted = true;
+  setPlayLabel();
+  setSoundLabel();
+
+  playBtn?.addEventListener("click", async () => {
+    try{
+      if (video.paused) await video.play();
+      else video.pause();
+    } catch {}
+    setPlayLabel();
+  });
+
+  soundBtn?.addEventListener("click", () => {
+    video.muted = !video.muted;
+    if (!video.muted) video.volume = 1;
+    setSoundLabel();
+  });
+
+  video.addEventListener("play", setPlayLabel);
+  video.addEventListener("pause", setPlayLabel);
+})();
+
