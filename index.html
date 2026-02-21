@@ -54,160 +54,174 @@
 
   <main id="top">
 
-<section class="heroX section" id="top">
-  <div class="container heroX__wrap">
+    <!-- HERO -->
+    <section class="heroX section" id="top">
+      <div class="container heroX__wrap">
 
-    <!-- Headline -->
-    <div class="heroX__head reveal">
-      <h1>
-        We design brands<br>
-        <span>people remember</span>
-      </h1>
+        <div class="heroX__head reveal">
+          <h1>
+            We design brands<br>
+            <span>people remember</span>
+          </h1>
 
-      <p>
-        Strategy-driven creative systems, cinematic motion,
-        and high-performance web experiences.
+          <p>
+            Strategy-driven creative systems, cinematic motion,
+            and high-performance web experiences.
+          </p>
+        </div>
+
+        <div class="heroX__panel reveal">
+
+          <div class="heroX__tabs" role="tablist">
+            <button class="heroX__tab is-active" data-tab="strategy">Strategy</button>
+            <button class="heroX__tab" data-tab="branding">Branding</button>
+            <button class="heroX__tab" data-tab="motion">Jingles</button>
+            <button class="heroX__tab" data-tab="web">Web</button>
+          </div>
+
+          <div class="heroX__videoWrap">
+            <video
+              id="heroVideo"
+              class="heroX__video"
+              playsinline
+              muted
+              autoplay
+              loop
+              preload="metadata"
+            >
+              <source src="https://pub-13bebf9e4bc742d6a4f9a72a23ea683b.r2.dev/viral.mp4" type="video/mp4">
+            </video>
+
+            <div class="heroX__controls">
+              <button id="playBtn">Pause</button>
+              <button id="soundBtn">Sound off</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- UNDER SEQUENCE -->
+        <div class="heroX__sequence">
+          <div class="heroX__sequenceLine is-visible">
+            Most brands don’t fail because of bad products.
+          </div>
+          <div class="heroX__sequenceLine">
+            They fail because perception decides first.
+          </div>
+          <div class="heroX__sequenceLine">
+            Attention is fragile.
+          </div>
+          <div class="heroX__sequenceLine">
+            Trust is instant.
+          </div>
+          <div class="heroX__sequenceLine">
+            Differentiation is everything.
+          </div>
+          <div class="heroX__sequenceLine heroX__sequenceLine--final">
+            We design brands built for that reality.
+          </div>
+        </div>
+
+        <!-- SERVICES -->
+<section id="services" class="section">
+  <div class="container">
+
+    <div class="section__head reveal">
+      <h2>Services</h2>
+      <p class="muted">
       </p>
     </div>
 
-    <!-- Premium Panel -->
-    <div class="heroX__panel reveal">
+    <div class="grid grid--2 servicesGrid">
 
-      <!-- Tabs (más minimal / más luxury) -->
-      <div class="heroX__tabs" role="tablist">
-        <button class="heroX__tab is-active" data-tab="strategy">Strategy</button>
-        <button class="heroX__tab" data-tab="branding">Branding</button>
-        <button class="heroX__tab" data-tab="motion">Jingles</button>
-        <button class="heroX__tab" data-tab="web">Web</button>
-      </div>
+        <!-- SERVICE 1 -->
+        <div class="service card reveal">
+          <img src="assets/imagen1.png" alt="Jingle Production">
 
-      <!-- Video -->
-      <div class="heroX__videoWrap">
-        <video
-          id="heroVideo"
-          class="heroX__video"
-          playsinline
-          muted
-          autoplay
-          loop
-          preload="metadata"
-        >
-          <source src="https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3" type="video/mp4">
-        </video>
+          <h3>🎵 Brand Jingle System</h3>
+          <p class="muted">Make your brand instantly recognizable.</p>
 
-        <div class="heroX__controls">
-          <button id="playBtn">Pause</button>
-          <button id="soundBtn">Sound off</button>
+          <ul>
+            <li>✔ Sonic identity</li>
+            <li>✔ Custom jingle</li>
+            <li>✔ Brand research</li>
+            <li>✔ Multi-platform usage</li>
+            <li>✔ 100% Commercial Rights</li>
+          </ul>
+
+          <button class="btn btn--primary">
+            Create My Jingle
+          </button>
         </div>
-      </div>
 
+        <!-- SERVICE 2 -->
+        <div class="service card reveal">
+          <img src="assets/imagen2.png" alt="AI Viral Videos">
+
+          <h3>🚀 Viral AI Promo Videos</h3>
+          <p class="muted">Attention engineered for short-form platforms.</p>
+
+          <ul>
+            <li>✔ AI-driven visuals</li>
+            <li>✔ Viral structures</li>
+            <li>✔ High-impact hooks</li>
+            <li>✔ Platform-optimized</li>
+          </ul>
+
+          <button class="btn btn--primary">
+            Launch Viral Video
+          </button>
+        </div>
+
+        <!-- SERVICE 3 -->
+        <div class="service card reveal">
+          <img src="assets/imagen3.png" alt="Content Editing">
+
+          <h3>✂ Short-Form Content Editing</h3>
+          <p class="muted">Turn raw content into addictive short videos.</p>
+
+          <ul>
+            <li>✔ Reels / TikTok / Shorts</li>
+            <li>✔ Fast turnaround</li>
+            <li>✔ Scroll-stopping pacing</li>
+            <li>✔ Conversion-focused cuts</li>
+          </ul>
+
+          <button class="btn btn--primary">
+            Edit My Content
+          </button>
+        </div>
+
+        <!-- SERVICE 4 -->
+        <div class="service card reveal">
+          <img src="assets/imagen4.png" alt="Video Strategy">
+
+          <h3>🧠 Short-Form Growth Strategy</h3>
+          <p class="muted">
+            A complete system to scale visibility & engagement.
+          </p>
+
+          <ul>
+            <li>✔ Custom roadmap</li>
+            <li>✔ Content frameworks</li>
+            <li>✔ Viral mechanics</li>
+            <li>✔ Reusable resources</li>
+          </ul>
+
+          <button class="btn btn--primary">
+            Build My Strategy
+          </button>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-<!-- UNDER -->
-<div class="heroX__sequence">
-
-  <div class="heroX__sequenceLine is-visible">
-    Most brands don’t fail because of bad products.
-  </div>
-
-  <div class="heroX__sequenceLine">
-    They fail because perception decides first.
-  </div>
-
-  <div class="heroX__sequenceLine">
-    Attention is fragile.
-  </div>
-
-  <div class="heroX__sequenceLine">
-    Trust is instant.
-  </div>
-
-  <div class="heroX__sequenceLine">
-    Differentiation is everything.
-  </div>
-
-  <div class="heroX__sequenceLine heroX__sequenceLine--final">
-    We design brands built for that reality.
-  </div>
-
-</div> <!-- ✅ CIERRE AQUÍ -->
-
-<!-- ✅ WORKFLOW FUERA -->
-<div class="workflowGrid">
-
-  <div class="card">
-    <img src="img/discovery.jpg" alt="">
-    <div class="card__n">01</div>
-    <h3>Discovery</h3>
-    <p>Objectives, research & strategic direction.</p>
-  </div>
-
-  <div class="card">
-    <img src="img/design.jpg" alt="">
-    <div class="card__n">02</div>
-    <h3>Design</h3>
-    <p>System, visual language & components.</p>
-  </div>
-
-  <div class="card">
-    <img src="img/build.jpg" alt="">
-    <div class="card__n">03</div>
-    <h3>Build</h3>
-    <p>Optimized HTML / CSS / JS implementation.</p>
-  </div>
-
-</div>
-
-    </section>
-
-    <!-- Selected Work -->
-    <section id="work" class="section">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2>Selected Work</h2>
-          <p class="muted">Cards con imágenes propias (AVIF/WebP) + hover.</p>
-        </div>
-
-        <div class="grid grid--3">
-          <a class="work reveal" href="#" aria-label="Project 1">
-            <div class="work__img">
-              <img src="assets/work1.webp" alt="Project 1" loading="lazy" decoding="async">
-            </div>
-            <div class="work__info">
-              <p class="muted">Tech</p>
-              <h3>AI Product Launch</h3>
-            </div>
-          </a>
-
-          <a class="work reveal" href="#" aria-label="Project 2">
-            <div class="work__img">
-              <img src="assets/work2.webp" alt="Project 2" loading="lazy" decoding="async">
-            </div>
-            <div class="work__info">
-              <p class="muted">Studio</p>
-              <h3>Brand System</h3>
-            </div>
-          </a>
-
-          <a class="work reveal" href="#" aria-label="Project 3">
-            <div class="work__img">
-              <img src="assets/work3.webp" alt="Project 3" loading="lazy" decoding="async">
-            </div>
-            <div class="work__info">
-              <p class="muted">Ecom</p>
-              <h3>Conversion Landing</h3>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats -->
+    <!-- STATS -->
     <section id="stats" class="section">
       <div class="container">
         <div class="section__head reveal">
           <h2>Stats</h2>
-          <p class="muted">Count-up al aparecer.</p>
         </div>
 
         <div class="grid grid--3">
@@ -227,34 +241,41 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="container">
         <div class="section__head reveal">
           <h2>Contact</h2>
-          <p class="muted">Formulario simple + animación.</p>
         </div>
 
-        <form class="form card reveal" id="contactForm" novalidate>
+        <form 
+          class="form card reveal"
+          action="https://formspree.io/f/xpqjydvo"
+          method="POST"
+        >
+          <input type="hidden" name="source" value="Landing Page">
+
           <div class="grid grid--2">
             <label>
               <span class="muted">Name</span>
-              <input id="name" name="name" type="text" placeholder="Your name" required minlength="2" />
+              <input name="name" type="text" required />
             </label>
+
             <label>
               <span class="muted">Email</span>
-              <input id="email" name="email" type="email" placeholder="you@email.com" required />
+              <input name="email" type="email" required />
             </label>
           </div>
 
           <label>
             <span class="muted">Message</span>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required minlength="10"></textarea>
+            <textarea name="message" rows="4" required></textarea>
           </label>
 
           <div class="form__actions">
-            <button class="btn btn--primary" type="submit" id="sendBtn">Send</button>
-            <p class="form__status muted" id="formStatus" aria-live="polite"></p>
+            <button class="btn btn--primary" type="submit">
+              Request Proposal
+            </button>
           </div>
         </form>
       </div>
@@ -265,14 +286,9 @@
   <footer class="footer">
     <div class="container footer__inner">
       <p class="muted">© <span id="year"></span> BSA Agency</p>
-      <div class="footer__links">
-        <a href="#top">Top</a>
-        <a href="#contact">Contact</a>
-      </div>
     </div>
   </footer>
 
   <script src="app.js" defer></script>
 </body>
 </html>
-

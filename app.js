@@ -449,16 +449,16 @@ video.addEventListener("click", () => {
 
   const TAB_DATA = {
     strategy: {
-      video: "https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3"
+      video: "https://pub-13bebf9e4bc742d6a4f9a72a23ea683b.r2.dev/viral.mp4"
     },
     branding: {
-      video: "https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3"
+      video: "https://pub-13bebf9e4bc742d6a4f9a72a23ea683b.r2.dev/viral.mp4"
     },
     motion: {
-      video: "https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3"
+      video: "https://pub-13bebf9e4bc742d6a4f9a72a23ea683b.r2.dev/viral.mp4"
     },
     web: {
-      video: "https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3"
+      video: "https://pub-13bebf9e4bc742d6a4f9a72a23ea683b.r2.dev/viral.mp4"
     }
   };
 

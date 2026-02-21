@@ -385,30 +385,49 @@
 }
 
 /* =====================================================
-   WORKFLOW
+   SERVICES GRID
 ===================================================== */
-.steps{ display:grid; gap: 14px; }
 
-.step{
+.servicesGrid{
+  gap: 26px;
+}
+
+.service{
+  padding: 8px;
   display:flex;
+  flex-direction:column;
   gap: 14px;
-  align-items:flex-start;
-  padding: 18px;
-  border: 1px solid var(--line);
-  border-radius: var(--r);
-  background: rgba(255,255,255,.03);
 }
 
-.step__n{
-  width:44px;
-  height:44px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.12);
+.service img{
+  width: 100%;
+  height: 240px;    /* 👈 DULCE PERFECTO */
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.service h3{
+  margin: 4px 0 0;
+  font-size: 20px;
+  letter-spacing: -.02em;
+}
+
+.service ul{
+  margin: 6px 0 4px;
+  padding: 0;
+  list-style:none;
   display:grid;
-  place-items:center;
-  color: rgba(233,236,242,.78);
+  gap: 6px;
 }
 
+.service li{
+  font-size: 14px;
+  color: rgba(233,236,242,.75);
+}
+
+.service .btn{
+  margin-top: auto;   /* 👈 Botón siempre alineado abajo */
+}
 /* =====================================================
    WORK
 ===================================================== */
