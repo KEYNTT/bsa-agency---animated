@@ -91,101 +91,197 @@
   color: rgba(233,236,242,.72);
   max-width:70ch;
 }
-
 /* =====================================================
-   HERO TABS
+   HERO X — PSYCHOLOGY + CONVERSION
 ===================================================== */
-.hero-tabs{
+
+.heroX{
+  padding-top: 90px;
+  padding-bottom: 110px;
   position: relative;
-  margin: 18px auto 0;
-  width: min(980px, 100%);
+}
+
+/* ===== HEADLINE ===== */
+
+.heroX__head{
+  text-align:center;
+  max-width: 900px;
+  margin: 0 auto 36px;
+}
+
+.heroX__head h1{
+  font-size: clamp(40px, 5vw, 72px);
+  letter-spacing: -.04em;
+  line-height: 1.02;
+  margin:0;
+}
+
+.heroX__head h1 span{
+  background: linear-gradient(90deg, #7df9ff, #b38bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroX__head p{
+  margin:18px auto 0;
+  font-size: 18px;
+  color: rgba(233,236,242,.70);
+  max-width: 60ch;
+}
+
+/* ===== PANEL ===== */
+
+.heroX__panel{
+  width: min(1100px, 100%);
+  margin: 0 auto;
+
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,.08);
+
+  background:
+    radial-gradient(900px 400px at 20% 10%, rgba(125,249,255,.12), transparent 60%),
+    radial-gradient(900px 400px at 80% 90%, rgba(179,139,255,.10), transparent 60%),
+    rgba(10,14,24,.85);
+
+  backdrop-filter: blur(20px);
+  padding: 18px;
+
+  box-shadow: 0 40px 120px rgba(0,0,0,.55);
+}
+
+/* ===== TABS ===== */
+
+.heroX__tabs{
   display:flex;
-  gap: 14px;
-  padding: 12px 56px;
+  gap: 8px;
+  padding: 6px;
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.12);
-  background:
-    radial-gradient(900px 300px at 30% 30%, rgba(58,123,255,.18), transparent 55%),
-    radial-gradient(700px 340px at 80% 70%, rgba(179,139,255,.14), transparent 55%),
-    rgba(255,255,255,.04);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  overflow: auto;
-  scrollbar-width: none;
-  box-shadow: 0 28px 80px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+  background: rgba(255,255,255,.04);
+  margin-bottom: 16px;
 }
-.hero-tabs::-webkit-scrollbar{ display:none; }
 
-.hero-tab{
-  flex: 0 0 auto;
-  min-width: 190px;
-  height: 74px;
-  display:flex;
-  align-items:center;
-  gap: 12px;
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.05);
-  color: rgba(233,236,242,.86);
-  cursor:pointer;
-  transition: transform .25s ease, border-color .25s ease, background .25s ease;
-  position: relative;
-  overflow:hidden;
-}
-.hero-tab:hover{
-  transform: translateY(-3px);
-  border-color: rgba(255,255,255,.20);
-  background: rgba(255,255,255,.07);
-}
-.hero-tab__ic{
-  width: 42px;
-  height: 42px;
-  display:grid;
-  place-items:center;
+.heroX__tab{
+  flex:1;
+  height: 46px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.10);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-  opacity: .95;
-}
-.hero-tab.is-active{
-  border-color: rgba(125,249,255,.35);
-  background:
-    radial-gradient(520px 160px at 20% 30%, rgba(125,249,255,.18), transparent 60%),
-    rgba(255,255,255,.06);
-  box-shadow: 0 22px 60px rgba(0,0,0,.28), 0 0 0 1px rgba(125,249,255,.14) inset;
-}
-
-/* arrows */
-.hero-tabs__nav{
-  position:absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.22);
-  color: rgba(233,236,242,.85);
-  display:grid;
-  place-items:center;
+  border: 0;
+  background: transparent;
+  color: rgba(233,236,242,.60);
+  font-weight: 600;
   cursor:pointer;
-  transition: transform .2s ease, background .2s ease, border-color .2s ease;
-}
-.hero-tabs__nav:hover{
-  transform: translateY(-50%) scale(1.04);
-  border-color: rgba(255,255,255,.20);
-  background: rgba(0,0,0,.32);
-}
-.hero-tabs__nav--l{ left: 10px; }
-.hero-tabs__nav--r{ right: 10px; }
-
-@media (max-width: 720px){
-  .hero-tab{ min-width: 170px; }
-  .hero-tabs{ padding-inline: 46px; }
+  transition:.25s ease;
 }
 
+.heroX__tab:hover{
+  color: white;
+  background: rgba(255,255,255,.06);
+}
+
+.heroX__tab.is-active{
+  background: white;
+  color: black;
+}
+
+/* ===== VIDEO ===== */
+
+.heroX__videoWrap{
+  position:relative;
+  border-radius: 18px;
+  overflow:hidden;
+  background:#000;
+}
+
+.heroX__video{
+  width:100%;
+  height:100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* ===== CONTROLS ===== */
+
+.heroX__controls{
+  position:absolute;
+  left: 16px;
+  bottom: 16px;
+  display:flex;
+  gap:10px;
+}
+
+.heroX__controls button{
+  border:0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(0,0,0,.55);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* ===== BAR ===== */
+
+.heroX__bar{
+  width: min(1100px, 100%);
+  margin: 18px auto 0;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+/* ===== TAB TRANSITIONS ===== */
+
+.heroX__videoWrap{
+  position: relative;
+  overflow: hidden;
+}
+
+/* capa animable */
+.heroX__video{
+  transition:
+    opacity .55s ease,
+    transform .7s cubic-bezier(.2,.6,.2,1),
+    filter .6s ease;
+}
+
+/* estado saliente */
+.heroX__video.is-changing{
+  opacity: 0;
+  transform: scale(1.04);
+  filter: blur(6px);
+}
+
+/* ===== TITLE ANIMATION ===== */
+
+#tabTitle{
+  transition:
+    opacity .35s ease,
+    transform .45s cubic-bezier(.2,.6,.2,1);
+}
+
+#tabTitle.is-changing{
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+/* ===== TAB ACTIVE POLISH ===== */
+
+.heroX__tab{
+  position: relative;
+  overflow: hidden;
+}
+
+.heroX__tab::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at center, rgba(255,255,255,.35), transparent 65%);
+  opacity:0;
+  transition:.4s ease;
+}
+
+.heroX__tab.is-active::after{
+  opacity:.25;
+}
 /* =====================================================
    VIDEO SHOWCASE
 ===================================================== */
@@ -431,4 +527,170 @@
 .showcase__overlay,
 .showcase__shine{
   pointer-events: none;
+}
+
+/* bajo el video  */
+.heroX__sequence{
+  position: relative;
+  height: 180px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  margin-top: 40px;
+}
+
+/* Frases */
+.heroX__sequenceLine{
+  position:absolute;
+  left:0;
+  right:0;
+
+font-size: clamp(40px, 3.2vw, 72px);
+font-weight: 500;
+letter-spacing: -0.04em;
+
+  opacity:0;
+  transform: translateY(14px);
+
+  transition:
+    opacity .7s ease,
+    transform 1s cubic-bezier(.2,.6,.2,1);
+}
+
+.heroX__sequenceLine.is-visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Frase final */
+.heroX__sequenceLine--final{
+  font-weight:600;
+}
+
+
+/* =========================================================
+   WORKFLOW GRID — CLEAN / BALANCED / PREMIUM
+========================================================= */
+
+.workflowGrid{
+  width: min(1100px, 100%);
+  margin: 28px auto 10px;   /* 👈 reduce espacio vertical */
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;                /* 👈 separación más elegante */
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .workflowGrid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   WORKFLOW CARDS — CONTROLLED SIZE
+========================================================= */
+
+.workflowGrid .card{
+
+  /* 👇 TAMAÑO REAL DEL PROBLEMA */
+  height: 260px;            /* 👈 FIX tamaño gigante */
+  padding: 16px;
+
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.10);
+
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(125,249,255,.06), transparent 40%),
+    radial-gradient(120% 140% at 100% 100%, rgba(179,139,255,.06), transparent 45%),
+    rgba(10,14,24,.55);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform .45s cubic-bezier(.2,.6,.2,1),
+    border-color .25s ease,
+    background .25s ease;
+}
+
+/* Hover */
+.workflowGrid .card:hover{
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(255,255,255,.22);
+}
+
+/* =========================================================
+   IMAGE CONTROL (clave para tamaño visual)
+========================================================= */
+
+.workflowGrid .card img{
+  width: 100%;
+  height: 140px;         /* 👈 FIX crítico */
+  object-fit: cover;
+
+  border-radius: 16px;
+
+  transition:
+    transform .6s cubic-bezier(.2,.6,.2,1),
+    filter .35s ease;
+}
+
+.workflowGrid .card:hover img{
+  transform: scale(1.05);
+  filter: saturate(1.1) contrast(1.05);
+}
+
+/* =========================================================
+   TYPOGRAPHY — BALANCED
+========================================================= */
+
+.workflowGrid h3{
+  margin: 14px 0 6px;
+  font-size: 18px;
+  letter-spacing: -.02em;
+}
+
+.workflowGrid p{
+  margin: 0;
+  font-size: 13.5px;
+  color: rgba(233,236,242,.60);
+  line-height: 1.4;
+}
+
+/* =========================================================
+   STEP NUMBER — REFINED
+========================================================= */
+
+.card__n{
+  position: absolute;
+  top: 14px;
+  left: 14px;
+
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,.45);
+}
+
+/* =========================================================
+   SPACING FIX — evita que Selected Work "salte"
+========================================================= */
+
+.heroX__sequence{
+  margin-bottom: 18px;     /* 👈 CONTROL DEL ESPACIO */
+}
+
+/* Este es el fix del "Selected Work demasiado abajo" */
+#work.section{
+  padding-top: 70px;       /* 👈 antes estaba exagerado */
 }

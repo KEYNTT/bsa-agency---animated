@@ -390,3 +390,163 @@ video.addEventListener("click", () => {
   video.addEventListener("play", setPlayLabel);
   video.addEventListener("pause", setPlayLabel);
 })();
+
+// =====================================================
+// HERO VIDEO CONTROLS
+// =====================================================
+(() => {
+
+  const video = document.getElementById("heroVideo");
+  if (!video) return;
+
+  const pauseBtn = document.querySelector(".heroX__control--pause");
+  const soundBtn = document.querySelector(".heroX__control--sound");
+
+  if (pauseBtn) {
+    pauseBtn.addEventListener("click", () => {
+
+      if (video.paused) {
+        video.play().catch(()=>{});
+        pauseBtn.textContent = "Pause";
+        pauseBtn.classList.remove("is-paused");
+      } else {
+        video.pause();
+        pauseBtn.textContent = "Play";
+        pauseBtn.classList.add("is-paused");
+      }
+
+    });
+  }
+
+  if (soundBtn) {
+    soundBtn.addEventListener("click", () => {
+
+      video.muted = !video.muted;
+
+      if (video.muted) {
+        soundBtn.textContent = "Sound on";
+        soundBtn.classList.add("is-muted");
+      } else {
+        soundBtn.textContent = "Sound off";
+        soundBtn.classList.remove("is-muted");
+      }
+
+    });
+  }
+
+})();
+
+
+// =====================================================
+// HERO TABS — CINEMATIC TRANSITION
+// =====================================================
+(() => {
+
+  const tabs = Array.from(document.querySelectorAll(".heroX__tab"));
+  const video = document.getElementById("heroVideo");
+
+  if (!tabs.length || !video) return;
+
+  const TAB_DATA = {
+    strategy: {
+      video: "https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3"
+    },
+    branding: {
+      video: "https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3"
+    },
+    motion: {
+      video: "https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3"
+    },
+    web: {
+      video: "https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3"
+    }
+  };
+
+  let activeKey = "strategy";
+  let isAnimating = false;
+
+  function setActiveTab(key){
+
+    if (key === activeKey || isAnimating) return;
+    isAnimating = true;
+
+    tabs.forEach(t => t.classList.toggle("is-active", t.dataset.tab === key));
+
+    video.classList.add("is-changing");
+
+    setTimeout(() => {
+
+      const data = TAB_DATA[key];
+
+      if (data?.video){
+        const src = video.querySelector("source");
+        src.src = data.video;
+        video.load();
+        video.play().catch(()=>{});
+      }
+
+      video.classList.remove("is-changing");
+
+      activeKey = key;
+      isAnimating = false;
+
+    }, 320);
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => setActiveTab(tab.dataset.tab));
+  });
+
+})();
+
+
+// =====================================================
+// HERO TEXT SEQUENCE (FADE LOOP)
+// =====================================================
+(() => {
+
+  const lines = Array.from(document.querySelectorAll(".heroX__sequenceLine"));
+  if (!lines.length) return;
+
+  let index = 0;
+
+  function showNext(){
+
+    const current = lines[index];
+    const next = lines[index + 1];
+
+    if (!next) {
+
+      current.classList.remove("is-visible");
+
+      setTimeout(() => {
+        lines[0].classList.add("is-visible");
+        index = 0;
+      }, 320);
+
+      return;
+    }
+
+    current.classList.remove("is-visible");
+
+    setTimeout(() => {
+      next.classList.add("is-visible");
+      index++;
+    }, 320);
+  }
+
+  // 🔥 VELOCIDAD GLOBAL
+  setInterval(showNext, 1600);
+
+})();
+
+const buttons = document.querySelectorAll(".card button");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    button.classList.toggle("following");
+    button.textContent = button.classList.contains("following")
+      ? "Unfollow"
+      : "Follow";
+  });
+});

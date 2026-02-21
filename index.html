@@ -54,116 +54,110 @@
 
   <main id="top">
 
-    <!-- HERO -->
-    <section class="hero2 section" id="top">
-      <div class="container hero2__wrap">
+<section class="heroX section" id="top">
+  <div class="container heroX__wrap">
 
-        <!-- Top intro -->
-        <div class="hero2__top reveal">
-          <h1 class="hero2__title">
-            BIG STRATEGY <span class="grad">AGENCY</span>
-          </h1>
-          <p class="hero2__sub">
-            Strategy-led creative. Motion-ready execution. Fast-loading web.
-          </p>
-        </div>
+    <!-- Headline -->
+    <div class="heroX__head reveal">
+      <h1>
+        We design brands<br>
+        <span>people remember</span>
+      </h1>
 
-        <!-- Tabs bar -->
-        <div class="hero-tabs reveal" role="tablist" aria-label="Services quick tabs">
-          <button class="hero-tab is-active" role="tab" aria-selected="true" data-tab="strategy">
-            <span class="hero-tab__ic" aria-hidden="true">⤴</span>
-            <span>Strategy</span>
-          </button>
-          <button class="hero-tab" role="tab" aria-selected="false" data-tab="branding">
-            <span class="hero-tab__ic" aria-hidden="true">📣</span>
-            <span>Branding</span>
-          </button>
-          <button class="hero-tab" role="tab" aria-selected="false" data-tab="motion">
-            <span class="hero-tab__ic" aria-hidden="true">◌</span>
-            <span>Motion</span>
-          </button>
-          <button class="hero-tab" role="tab" aria-selected="false" data-tab="web">
-            <span class="hero-tab__ic" aria-hidden="true">⌁</span>
-            <span>Web</span>
-          </button>
+      <p>
+        Strategy-driven creative systems, cinematic motion,
+        and high-performance web experiences.
+      </p>
+    </div>
 
-          <!-- arrows -->
-          <button class="hero-tabs__nav hero-tabs__nav--l" type="button" aria-label="Scroll left">‹</button>
-          <button class="hero-tabs__nav hero-tabs__nav--r" type="button" aria-label="Scroll right">›</button>
-        </div>
+    <!-- Premium Panel -->
+    <div class="heroX__panel reveal">
 
-        <!-- Video showcase -->
-          <div class="showcase__frame yt">
-            <video
-              id="heroVideo"
-              class="showcase__video"
-              playsinline
-              muted
-              autoplay
-              loop
-              preload="metadata"
-            >
-              <source src="https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3" type="video/mp4">
-            </video>
-
-            <div class="showcase__controls">
-              <button class="ctrl" id="playBtn" type="button" aria-label="Play/Pause">
-                <span id="playTxt">Pause</span>
-              </button>
-
-              <button class="ctrl" id="soundBtn" type="button" aria-label="Mute/Unmute">
-                <span id="soundTxt">Sound off</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- small caption row -->
-          <div class="showcase__meta">
-            <div class="meta__left">
-              <p class="muted">Selected capability</p>
-              <p class="big" id="tabTitle">Strategy systems that scale.</p>
-            </div>
-            <div class="meta__right">
-              <button class="btn btn--primary" data-scroll="#services">Explore services</button>
-            </div>
-          </div>
-        </div>
-
+      <!-- Tabs (más minimal / más luxury) -->
+      <div class="heroX__tabs" role="tablist">
+        <button class="heroX__tab is-active" data-tab="strategy">Strategy</button>
+        <button class="heroX__tab" data-tab="branding">Branding</button>
+        <button class="heroX__tab" data-tab="motion">Jingles</button>
+        <button class="heroX__tab" data-tab="web">Web</button>
       </div>
-    </section>
 
-    <!-- Workflow -->
-    <section id="workflow" class="section">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2>Workflow</h2>
-          <p class="muted">Timeline animada (la armamos igual al repo).</p>
-        </div>
+      <!-- Video -->
+      <div class="heroX__videoWrap">
+        <video
+          id="heroVideo"
+          class="heroX__video"
+          playsinline
+          muted
+          autoplay
+          loop
+          preload="metadata"
+        >
+          <source src="https://pub-39312d57b06e43c38f69afe92705fd6d.r2.dev/0218.mp4?v=3" type="video/mp4">
+        </video>
 
-        <div class="steps">
-          <div class="step reveal">
-            <span class="step__n">01</span>
-            <div>
-              <h3>Discovery</h3>
-              <p class="muted">Objetivos, research y dirección.</p>
-            </div>
-          </div>
-          <div class="step reveal">
-            <span class="step__n">02</span>
-            <div>
-              <h3>Design</h3>
-              <p class="muted">Sistema visual + componentes.</p>
-            </div>
-          </div>
-          <div class="step reveal">
-            <span class="step__n">03</span>
-            <div>
-              <h3>Build</h3>
-              <p class="muted">HTML/CSS/JS optimizado.</p>
-            </div>
-          </div>
+        <div class="heroX__controls">
+          <button id="playBtn">Pause</button>
+          <button id="soundBtn">Sound off</button>
         </div>
       </div>
+
+    </div>
+
+<!-- UNDER -->
+<div class="heroX__sequence">
+
+  <div class="heroX__sequenceLine is-visible">
+    Most brands don’t fail because of bad products.
+  </div>
+
+  <div class="heroX__sequenceLine">
+    They fail because perception decides first.
+  </div>
+
+  <div class="heroX__sequenceLine">
+    Attention is fragile.
+  </div>
+
+  <div class="heroX__sequenceLine">
+    Trust is instant.
+  </div>
+
+  <div class="heroX__sequenceLine">
+    Differentiation is everything.
+  </div>
+
+  <div class="heroX__sequenceLine heroX__sequenceLine--final">
+    We design brands built for that reality.
+  </div>
+
+</div> <!-- ✅ CIERRE AQUÍ -->
+
+<!-- ✅ WORKFLOW FUERA -->
+<div class="workflowGrid">
+
+  <div class="card">
+    <img src="img/discovery.jpg" alt="">
+    <div class="card__n">01</div>
+    <h3>Discovery</h3>
+    <p>Objectives, research & strategic direction.</p>
+  </div>
+
+  <div class="card">
+    <img src="img/design.jpg" alt="">
+    <div class="card__n">02</div>
+    <h3>Design</h3>
+    <p>System, visual language & components.</p>
+  </div>
+
+  <div class="card">
+    <img src="img/build.jpg" alt="">
+    <div class="card__n">03</div>
+    <h3>Build</h3>
+    <p>Optimized HTML / CSS / JS implementation.</p>
+  </div>
+
+</div>
+
     </section>
 
     <!-- Selected Work -->
@@ -281,3 +275,4 @@
   <script src="app.js" defer></script>
 </body>
 </html>
+
