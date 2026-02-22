@@ -199,3 +199,4 @@ input:invalid, textarea:invalid { outline: 1px solid rgba(255,80,80,.35); }
 .footer__links{ display:flex; gap: 12px; }
 .footer__links a{ color: rgba(233,236,242,.65); }
 .footer__links a:hover{ color: var(--text); }
+

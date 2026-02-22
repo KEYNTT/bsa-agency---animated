@@ -8,6 +8,31 @@
    - Stats
 ========================================================= */
 
+/* =========================================================
+   NAVBAR SYSTEM — SCROLL BEHAVIOR
+========================================================= */
+
+:root{
+  --nav-height: 72px;
+}
+
+/* ===== NAVBAR BASE (TOP) ===== */
+
+.nav{
+  height: var(--nav-height);
+
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+/* ===== NAVBAR ON SCROLL ===== */
+
+.nav.is-scrolled{
+  background: rgba(10,14,24,.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
 /* =====================================================
    HERO (legacy)
 ===================================================== */
@@ -96,11 +121,10 @@
 ===================================================== */
 
 .heroX{
-  padding-top: 90px;
+  padding-top: calc(var(--nav-height) + 4px);
   padding-bottom: 110px;
   position: relative;
 }
-
 /* ===== HEADLINE ===== */
 
 .heroX__head{
@@ -141,12 +165,13 @@
   background:
     radial-gradient(900px 400px at 20% 10%, rgba(125,249,255,.12), transparent 60%),
     radial-gradient(900px 400px at 80% 90%, rgba(179,139,255,.10), transparent 60%),
-    rgba(10,14,24,.85);
+    rgba(10,14,24,.92);   /* 👈 ligeramente más sólido */
 
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(6px);  /* 👈 antes 20px 💀 */
+
   padding: 18px;
 
-  box-shadow: 0 40px 120px rgba(0,0,0,.55);
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);  /* 👈 sombra más barata */
 }
 
 /* ===== TABS ===== */
@@ -244,10 +269,10 @@
 }
 
 /* estado saliente */
-.heroX__video.is-changing{
-  opacity: 0;
-  transform: scale(1.04);
-  filter: blur(6px);
+.heroX__video{
+  transition:
+    opacity .55s ease,
+    transform .7s cubic-bezier(.2,.6,.2,1);
 }
 
 /* ===== TITLE ANIMATION ===== */
