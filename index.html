@@ -1,16 +1,54 @@
-<!doctype html>
+<!doctype html> 
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BSA Marketing — Landing</title>
 
+  <!-- TITLE solicitado -->
+  <title>BIG STRATEGY AGENCY | BSA</title>
+
+  <!-- SEO mínimos añadidos (no cambian tu contenido) -->
+  <meta name="description" content="Big Strategy Agency (BSA) — Viral video strategy, brand jingles, short-form content and growth systems. Visit https://big-strategy.com" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://big-strategy.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BIG STRATEGY AGENCY | BSA" />
+  <meta property="og:description" content="Big Strategy Agency (BSA) — Viral video strategy, brand jingles, short-form content and growth systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://big-strategy.com/" />
+  <meta property="og:image" content="https://big-strategy.com/assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Canonical / Hreflang (default) -->
+  <link rel="alternate" hreflang="en" href="https://big-strategy.com/" />
+
+  <!-- (Se mantienen tus CSS tal cual) -->
   <link rel="stylesheet" href="css/01-settings.css">
   <link rel="stylesheet" href="css/02-base.css">
   <link rel="stylesheet" href="css/03-layout.css">
   <link rel="stylesheet" href="css/04-components.css">
   <link rel="stylesheet" href="css/05-sections.css">
   <link rel="stylesheet" href="css/06-effects.css">
+
+  <!-- JSON-LD básico (organización/contacto) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BIG STRATEGY AGENCY | BSA",
+    "url": "https://big-strategy.com",
+    "logo": "https://big-strategy.com/assets/logo.png",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+51930380769",
+        "contactType": "customer service",
+        "availableLanguage": ["English","Spanish"]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -376,5 +414,10 @@
   </footer>
 
   <script src="app.js" defer></script>
+
+  <script>
+    // year fill
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
