@@ -200,3 +200,56 @@ input:invalid, textarea:invalid { outline: 1px solid rgba(255,80,80,.35); }
 .footer__links a{ color: rgba(233,236,242,.65); }
 .footer__links a:hover{ color: var(--text); }
 
+/* ===== Service buttons: WhatsApp + Tally (stacked) ===== */
+.service__actions{
+  margin-top: auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* Modesto botón verde WhatsApp (manteniendo la estética pill) */
+.btn--whatsapp{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 0;
+  font-weight: 700;
+  background: linear-gradient(90deg, #25D366 0%, #128C7E 100%); /* WhatsApp green */
+  color: white;
+  box-shadow: 0 8px 18px rgba(18,140,126,0.12);
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+.btn--whatsapp svg{ width:18px; height:18px; flex:0 0 18px; }
+.btn--whatsapp:hover{ transform: translateY(-2px); box-shadow: 0 12px 26px rgba(18,140,126,0.18); }
+
+/* Mantener botón secundario con estilo del sistema (ghost) */
+.btn--ghost{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-align:center;
+}
+.btn--whatsapp{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;   /* 🔥 clave */
+  gap: 8px;
+
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 0;
+
+  font-weight: 700;
+  line-height: 1;            /* 🔥 evita desbalance óptico */
+
+  background: linear-gradient(90deg, #25D366, #128C7E);
+  color: white;
+
+  text-align: center;        /* backup */
+}
